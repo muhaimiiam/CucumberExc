@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="/Users/muhaimi_271/eclipse-workspace/CucumberJava/src/test/resources/Features",
+@CucumberOptions(features="/Users/muhaimi/eclipse-workspace/CucumberJava/src/test/resources/Features",
 glue={"StepDefinitions"}, monochrome = true, 
 plugin = {"pretty",
 		"html:target/HtmlReports", 

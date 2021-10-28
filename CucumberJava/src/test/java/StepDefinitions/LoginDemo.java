@@ -21,7 +21,7 @@ public class LoginDemo {
 	@Given("Browser is open")
 	public void browser_is_open() {
 		System.out.println("Browser is opened");
-		System.setProperty("webdriver.chrome.driver", "/Users/muhaimi_271/eclipse-workspace/CucumberJava/src/test/resources/driver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/muhaimi/eclipse-workspace/CucumberJava/src/test/resources/driver/chromedriver");
 	    
 		driver=new ChromeDriver();
 	    
