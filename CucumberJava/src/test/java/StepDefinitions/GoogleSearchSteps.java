@@ -1,7 +1,5 @@
 package StepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,12 +12,12 @@ import io.cucumber.java.en.When;
 
 public class GoogleSearchSteps {
 	
-	WebDriver driver = null;
-	
+//	WebDriver driver = null;
+//	
 //	@Given("Browser is open")
 //	public void browser_is_open() {
 //	    System.out.println("Inside step: Browser is open");
-//	    System.setProperty("webdriver.chrome.driver", "/Users/muhaimi_271/eclipse-workspace/CucumberJava/src/test/resources/driver/chromedriver");
+//	    System.setProperty("webdriver.chrome.driver", "/Users/muhaimi/Documents/eclipse-workspace/CucumberExc/CucumberJava/src/test/resources/driver/chromedriver");
 //	    
 //	    driver=new ChromeDriver();
 //	    

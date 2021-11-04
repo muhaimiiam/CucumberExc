@@ -10,4 +10,3 @@ Feature: Test login funct
     Examples: 
       | username | password |
       | Raghav   |    12345 |
-      

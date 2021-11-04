@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,16 +18,18 @@ public class LoginDemo {
 	WebDriver driver = null;
 	
 	LoginPage login;
+	HomePage homePage;
 	
 	@Given("Browser is open")
 	public void browser_is_open() {
 		System.out.println("Browser is opened");
-		System.setProperty("webdriver.chrome.driver", "/Users/muhaimi/eclipse-workspace/CucumberJava/src/test/resources/driver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/muhaimi/Documents/eclipse-workspace/CucumberExc/CucumberJava/src/test/resources/driver/chromedriver");
 	    
 		driver=new ChromeDriver();
 	    
 	    driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
 	    driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
+	    driver.manage().window().maximize();
 	}
 
 	@And("user is on login page")
@@ -35,8 +38,8 @@ public class LoginDemo {
 		Thread.sleep(1000);
 	}
 
-	@When("user enter (.*) and (.*)$")
-	public void user_enter_username_and_password(String username, String password) throws InterruptedException {
+	@When("user enter credentials (.*) and (.*)$")
+	public void user_enter_credentials(String username, String password) throws InterruptedException {
 //	    driver.findElement(By.id("name")).sendKeys(username);
 //	    driver.findElement(By.id("password")).sendKeys(password);
 		
@@ -59,7 +62,33 @@ public class LoginDemo {
 	public void user_is_navigated_to_the_home_page() throws InterruptedException {
 //		driver.findElement(By.id("logout")).click();
 		
-		login.clickLogout();
+//		login.clickLogout();
+		
+		Thread.sleep(2000);
+		
+//		driver.close();
+//		driver.quit();
+	}
+	
+	@When("user enter details (.*) and (.*) and (.*) and (.*)$")
+	public void user_enter_details(String country, String address, String email, String phone) {
+	    homePage = new HomePage(driver);
+	    homePage.selectCountry(country);
+	    homePage.enterAddress(address);
+	    homePage.enterEmail(email);
+	    homePage.enterPhone(phone);
+	}
+
+	@And("user click on save")
+	public void user_click_on_save() throws InterruptedException {
+	    homePage.clickSave();
+	    Thread.sleep(2000);
+	}
+	
+	@Then("data is saved")
+	public void data_is_saved() throws InterruptedException {
+	    System.out.println("Data is saved");
+		homePage.clickLogout();
 		
 		Thread.sleep(2000);
 		
