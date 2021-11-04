@@ -1,4 +1,4 @@
-package StepDefinitions;
+package TestRunner;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.CucumberOptions;
@@ -16,6 +16,6 @@ import io.cucumber.junit.Cucumber;
 		"json:target/JSONReports/report.json",
 		"junit:target/JUnitReports/report.xml"})
 
-public class TestRunner {
+public class TestRunner001 {
 
 }
